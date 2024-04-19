@@ -1,12 +1,11 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from "react";
+import { Link, graphql } from "gatsby";
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import { rhythm } from "../utils/typography";
 import "./blog.css";
-import SearchBar from "../components/searchBar/searchBar"
-
+import SearchBar from "../components/searchBar/searchBar";
 
 
 
@@ -14,13 +13,26 @@ class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMarkdownRemark.edges
-    console.log("les articles : ", posts.title)
+    const posts = data.allMarkdownRemark.edges;
+    const titleArray = [
+      posts[0].node.frontmatter.title,
+      posts[1].node.frontmatter.title,
+      posts[2].node.frontmatter.title,
+      posts[3].node.frontmatter.title,
+      posts[4].node.frontmatter.title,
+      posts[5].node.frontmatter.title,
+      posts[6].node.frontmatter.title,
+      posts[7].node.frontmatter.title,
+      posts[8].node.frontmatter.title,
+      posts[9].node.frontmatter.title
+    ];
+    console.log("les articles : ", titleArray)
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
-        <h3>Great Articles by Abel <SearchBar dataPostTitle = {posts.title}/></h3>
+        <h3>Great Articles by Abel</h3>
+        <SearchBar dataPostTitle = {titleArray}/>
         
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug

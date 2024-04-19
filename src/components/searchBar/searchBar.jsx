@@ -1,9 +1,11 @@
 import React from "react";
 import { useState } from "react";
-// import "./searchBar.css"
+// import "src\components\searchBar\seachBar.css"
 
-function SearchBar(dataPostTitle) {
-  const data = [];
+
+function SearchBar({ dataPostTitle }) {
+  const data = dataPostTitle;
+  console.log(data)
 
   const [value, setValue] = useState("");
 
@@ -20,7 +22,8 @@ function SearchBar(dataPostTitle) {
         </button>
       </div>
       <ul>
-        {value &&
+        {
+          value &&
           data
             .filter((element) =>
               element.toLowerCase().includes(value.toLowerCase())
@@ -29,7 +32,8 @@ function SearchBar(dataPostTitle) {
               <li onClick={() => setValue(element)} key={index}>
                 {element}
               </li>
-            ))}
+            ))
+        }
       </ul>
     </div>
   );

@@ -1,9 +1,74 @@
 article a:hover {
-    color: #1ca086; ;
-    
-    
+    color: #1ca086;
+    ;
+
+
 }
 
 article a {
     text-decoration: none !important;
+}
+
+
+/* searchbar for post style  */
+
+.searchBar {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.searchBar button {
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+}
+
+.searchBar .inputSearch {
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.inputSearch input {
+    font-size: 1rem;
+    color: #1c1c1d;
+    border: none;
+    background-color: gray;
+    display: flex;
+    cursor: alias;
+    padding: 0.2rem 1rem;
+}
+
+.inputSearch input:focus {
+    outline: none;
+}
+
+.searchBar ul {
+    width: 100%;
+    list-style: none;
+    background-color: #fff;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: var(--text-color);
+    overflow: hidden;
+    position: absolute;
+    top: 3rem;
+}
+
+.searchBar ul li {
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.searchBar ul li:hover {
+    background-color: var(--primary-color);
+}
+
+.inputSearch span {
+    color: var(--text-color);
+    padding: 0.5rem 0.8rem;
 }
