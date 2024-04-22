@@ -51,7 +51,7 @@ article a {
     width: 100%;
     list-style: none;
     background-color: #fff;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     font-size: 1rem;
     color: var(--text-color);
     overflow: hidden;
